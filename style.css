@@ -1,0 +1,212 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colors and variables */
+:root {
+    --primary: #3b82f6; /* Blue */
+    --primary-dark: #2563eb; /* Darker Blue */
+    --bg: #f9f9f9; /* Light background */
+    --text: #333; /* Dark text */
+    --white: #ffffff;
+    --card-bg: #ffffff; /* White card background */
+    --shadow: rgba(0, 0, 0, 0.1);
+    --hover-bg: #f0f4f8; /* Light gray for hover */
+}
+
+/* Automatic Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1a202c; /* Darker background */
+        --text: #e2e8f0; /* Lighter text */
+        --card-bg: #2d3748; /* Dark card background */
+        --hover-bg: #4a5568; /* Darker gray for hover */
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns content to the top */
+    min-height: 100vh;
+}
+
+/* Central container */
+.container {
+    max-width: 750px;
+    width: 100%;
+    margin: 30px auto; /* Add more top margin */
+    padding: 25px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
+    animation: fadeIn 0.9s ease-out;
+}
+
+/* Entry animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Titles */
+h1, h2 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary); /* Underline effect */
+    display: inline-block; /* To make underline fit content */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+/* Sections */
+section {
+    background-color: var(--card-bg);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: background-color 0.4s ease, transform 0.2s ease-out;
+}
+
+section:hover {
+    background-color: var(--hover-bg);
+    transform: translateY(-3px); /* Subtle lift effect */
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 1.05rem;
+    border: 1px solid #c9d0da;
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--text);
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
+    outline: none;
+    background-color: var(--hover-bg); /* Slight change on focus */
+}
+
+/* Buttons with icons */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button i {
+    font-size: 1.1rem;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Results */
+p {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--text);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"], button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    button {
+        flex-direction: column; /* Stack icon and text on small screens */
+        gap: 5px;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}

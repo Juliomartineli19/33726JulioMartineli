@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Estacionamento</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="container">
+        <h1>Gestão de Estacionamento</h1>
+
+        <section>
+            <h2>Registrar Entrada</h2>
+            <form id="entryForm">
+                <input type="text" id="entryModel" placeholder="Modelo" required />
+                <input type="text" id="entryPlate" placeholder="Placa" required />
+                <button type="submit">Registrar</button>
+            </form>
+            <p id="entryResult"></p>
+        </section>
+
+        <section>
+            <h2>Tempo de Permanência</h2>
+            <form id="timeForm">
+                <input type="text" id="timePlate" placeholder="Placa" required />
+                <button type="submit">Consultar</button>
+            </form>
+            <p id="timeResult"></p>
+        </section>
+
+        <section>
+            <h2>Registrar Saída</h2>
+            <form id="exitForm">
+                <input type="text" id="exitPlate" placeholder="Placa" required />
+                <button type="submit">Confirmar Saída</button>
+            </form>
+            <p id="exitResult"></p>
+        </section>
+
+        <section>
+            <h2>Verificar Presença</h2>
+            <form id="checkForm">
+                <input type="text" id="checkPlate" placeholder="Placa" required />
+                <button type="submit">Verificar</button>
+            </form>
+            <p id="checkResult"></p>
+        </section>
+
+        <section>
+            <h2>Atualizar Veículo</h2>
+            <form id="updateForm">
+                <input type="text" id="updatePlate" placeholder="Placa" required />
+                <input type="text" id="updateModel" placeholder="Novo Modelo" required />
+                <button type="submit">Atualizar</button>
+            </form>
+            <p id="updateResult"></p>
+        </section>
+
+        <section>
+            <h2>Cancelar Registro</h2>
+            <form id="cancelForm">
+                <input type="text" id="cancelPlate" placeholder="Placa" required />
+                <button type="submit">Cancelar</button>
+            </form>
+            <p id="cancelResult"></p>
+        </section>
+    </main>
+
+    <script src="JS/main.js"></script>
+</body>
+</html>
